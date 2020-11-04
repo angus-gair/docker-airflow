@@ -79,7 +79,7 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 RUN chown -R airflow: ${AIRFLOW_USER_HOME}
-
+RUN pip install gitpython
 
 EXPOSE 8080 5555 8793
 
