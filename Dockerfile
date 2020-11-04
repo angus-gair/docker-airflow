@@ -76,10 +76,10 @@ RUN set -ex \
 COPY script/entrypoint.sh /entrypoint.sh
 COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 COPY requirements.txt requirements.txt
+COPY csv_to_bigquery.py csv_to_bigquery.py
 
 RUN pip install -r requirements.txt
 RUN chown -R airflow: ${AIRFLOW_USER_HOME}
-RUN pip install gitpython
 
 EXPOSE 8080 5555 8793
 
